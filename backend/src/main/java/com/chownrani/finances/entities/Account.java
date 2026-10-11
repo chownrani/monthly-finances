@@ -34,13 +34,13 @@ public class Account {
     private User user;
 
     @Column(name = "saldo_atual", nullable = false)
-    private BigDecimal saldoAtual = BigDecimal.ZERO;
+    private BigDecimal currentBalance = BigDecimal.ZERO;
 
     @CreationTimestamp
     @Column(name = "criado_em", nullable = false, updatable = false)
-    private LocalDateTime criadoEm;
+    private LocalDateTime createdAt;
 
     @UpdateTimestamp
     @Column(name = "atualizado_em", nullable = false)
-    private LocalDateTime atualizadoEm;
+    private LocalDateTime updatedAt;
 }

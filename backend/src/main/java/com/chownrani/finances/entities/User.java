@@ -27,18 +27,18 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
-    private String nome;
+    @Column(name = "nome", nullable = false)
+    private String name;
 
     @Column(nullable = false, unique = true)
     private String email;
 
     @Column(name = "renda_base")
-    private BigDecimal rendaBase;
+    private BigDecimal baseIncome;
 
     @CreationTimestamp
     @Column(name = "criado_em", nullable = false, updatable = false)
-    private LocalDateTime criadoEm;
+    private LocalDateTime createdAt;
 
     @UpdateTimestamp
     @Column(name = "atualizado_em", nullable = false)

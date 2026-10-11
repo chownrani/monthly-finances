@@ -33,20 +33,20 @@ public class Emergency {
     @JoinColumn(name = "user_id", nullable = false, unique = true)
     private User user;
 
-    @Column(nullable = false)
-    private BigDecimal meta;
+    @Column(name = "meta", nullable = false)
+    private BigDecimal goal;
 
     @Column(name = "percentual_renda")
-    private BigDecimal percentualRenda;
+    private BigDecimal incomePercentage;
 
     @Column(name = "total_guardado", nullable = false)
-    private BigDecimal totalGuardado = BigDecimal.ZERO;
+    private BigDecimal totalSaved = BigDecimal.ZERO;
 
     @CreationTimestamp
     @Column(name = "criado_em", nullable = false, updatable = false)
-    private LocalDateTime criadoEm;
+    private LocalDateTime createdAt;
 
     @UpdateTimestamp
     @Column(name = "atualizado_em", nullable = false)
-    private LocalDateTime atualizadoEm;
+    private LocalDateTime updatedAt;
 }

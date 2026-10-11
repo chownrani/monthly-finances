@@ -17,8 +17,8 @@ import lombok.Setter;
 public class Credit extends Card {
 
     @Column(name = "dia_fechamento", nullable = false)
-    private Integer diaFechamento;
+    private Integer closingDay;
 
     @Column(name = "dia_vencimento", nullable = false)
-    private Integer diaVencimento;
+    private Integer dueDay;
 }

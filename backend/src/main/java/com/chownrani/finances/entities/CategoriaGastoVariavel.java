@@ -27,11 +27,12 @@ public class CategoriaGastoVariavel {
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
-    @Column(nullable = false)
-    private String nome;
+    @Column(name = "nome", nullable = false)
+    private String name;
 
-    private String cor;
+    @Column(name = "cor")
+    private String color;
 
-    @Column(nullable = false)
-    private Boolean ativa = Boolean.TRUE;
+    @Column(name = "ativa", nullable = false)
+    private Boolean active = Boolean.TRUE;
 }

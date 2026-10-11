@@ -29,15 +29,15 @@ public class ServicoCompetencia {
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "competencia_id", nullable = false)
-    private Competencia competencia;
+    private Competencia competence;
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "servico_id", nullable = false)
-    private Servico servico;
+    private Servico service;
 
-    @Column(nullable = false)
-    private BigDecimal valor;
+    @Column(name = "valor", nullable = false)
+    private BigDecimal amount;
 
-    @Column(nullable = false)
-    private Boolean pago = Boolean.FALSE;
+    @Column(name = "pago", nullable = false)
+    private Boolean paid = Boolean.FALSE;
 }

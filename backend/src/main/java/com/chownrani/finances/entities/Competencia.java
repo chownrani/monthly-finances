@@ -36,27 +36,29 @@ public class Competencia {
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
-    @Column(nullable = false)
-    private Integer ano;
+    @Column(name = "ano", nullable = false)
+    private Integer year;
 
-    @Column(nullable = false)
-    private Integer mes;
+    @Column(name = "mes", nullable = false)
+    private Integer month;
 
-    private BigDecimal renda;
+    @Column(name = "renda")
+    private BigDecimal income;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private StatusCompetencia status = StatusCompetencia.ABERTO;
 
     @Column(name = "teto_variavel")
-    private BigDecimal tetoVariavel;
+    private BigDecimal variableLimit;
 
-    private BigDecimal sobra;
+    @Column(name = "sobra")
+    private BigDecimal surplus;
 
     @CreationTimestamp
     @Column(name = "criado_em", nullable = false, updatable = false)
-    private LocalDateTime criadoEm;
+    private LocalDateTime createdAt;
 
     @Column(name = "fechado_em")
-    private LocalDateTime fechadoEm;
+    private LocalDateTime closedAt;
 }

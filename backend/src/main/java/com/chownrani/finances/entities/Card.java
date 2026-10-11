@@ -30,9 +30,9 @@ public abstract class Card {
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
-    @Column(nullable = false)
-    private String nome;
+    @Column(name = "nome", nullable = false)
+    private String name;
 
-    @Column(nullable = false)
-    private Boolean ativo = Boolean.TRUE;
+    @Column(name = "ativo", nullable = false)
+    private Boolean active = Boolean.TRUE;
 }

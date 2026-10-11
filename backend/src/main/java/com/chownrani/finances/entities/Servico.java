@@ -27,17 +27,17 @@ public class Servico {
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "categoria_gasto_fixo_id", nullable = false)
-    private CategoriaGastoFixo categoriaGastoFixo;
+    private CategoriaGastoFixo fixedExpenseCategory;
 
-    @Column(nullable = false)
-    private String nome;
+    @Column(name = "nome", nullable = false)
+    private String name;
 
     @Column(name = "valor_padrao", nullable = false)
-    private BigDecimal valorPadrao;
+    private BigDecimal defaultValue;
 
     @Column(name = "dia_vencimento")
-    private Integer diaVencimento;
+    private Integer dueDay;
 
-    @Column(nullable = false)
-    private Boolean ativo = Boolean.TRUE;
+    @Column(name = "ativo", nullable = false)
+    private Boolean active = Boolean.TRUE;
 }

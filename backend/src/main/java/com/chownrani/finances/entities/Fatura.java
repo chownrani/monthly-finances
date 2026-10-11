@@ -29,12 +29,12 @@ public class Fatura {
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "competencia_id", nullable = false)
-    private Competencia competencia;
+    private Competencia competence;
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "credit_id", nullable = false)
     private Credit credit;
 
-    @Column(nullable = false)
-    private BigDecimal valor;
+    @Column(name = "valor", nullable = false)
+    private BigDecimal amount;
 }

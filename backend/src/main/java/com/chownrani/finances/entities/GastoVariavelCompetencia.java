@@ -29,12 +29,12 @@ public class GastoVariavelCompetencia {
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "competencia_id", nullable = false)
-    private Competencia competencia;
+    private Competencia competence;
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "categoria_id", nullable = false)
-    private CategoriaGastoVariavel categoria;
+    private CategoriaGastoVariavel category;
 
     @Column(name = "valor_acumulado", nullable = false)
-    private BigDecimal valorAcumulado = BigDecimal.ZERO;
+    private BigDecimal accumulatedAmount = BigDecimal.ZERO;
 }
