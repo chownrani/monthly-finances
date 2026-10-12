@@ -1,5 +1,6 @@
 package com.chownrani.finances.entities;
 
+import com.chownrani.finances.entities.abstracts.Card;
 import jakarta.persistence.Entity;
 import jakarta.persistence.PrimaryKeyJoinColumn;
 import jakarta.persistence.Table;

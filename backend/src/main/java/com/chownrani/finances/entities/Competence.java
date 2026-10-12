@@ -3,15 +3,13 @@ package com.chownrani.finances.entities;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-import org.hibernate.annotations.CreationTimestamp;
+import com.chownrani.finances.entities.abstracts.AbstractEntity;
+import com.chownrani.finances.entities.enums.CompetenceStatus;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
@@ -21,44 +19,36 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "competencia", uniqueConstraints = @UniqueConstraint(name = "uk_competencia_user_ano_mes", columnNames = {
-        "user_id", "ano", "mes" }))
+@Table(name = "competence", uniqueConstraints = @UniqueConstraint(name = "uk_competence_user_year_month", columnNames = {
+        "user_id", "year", "month" }))
 @Getter
 @Setter
 @NoArgsConstructor
-public class Competencia {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class Competence extends AbstractEntity {
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
-    @Column(name = "ano", nullable = false)
+    @Column(name = "year", nullable = false)
     private Integer year;
 
-    @Column(name = "mes", nullable = false)
+    @Column(name = "month", nullable = false)
     private Integer month;
 
-    @Column(name = "renda")
+    @Column(name = "income")
     private BigDecimal income;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private StatusCompetencia status = StatusCompetencia.ABERTO;
+    private CompetenceStatus status = CompetenceStatus.OPEN;
 
-    @Column(name = "teto_variavel")
+    @Column(name = "variable_limit")
     private BigDecimal variableLimit;
 
-    @Column(name = "sobra")
+    @Column(name = "surplus")
     private BigDecimal surplus;
 
-    @CreationTimestamp
-    @Column(name = "criado_em", nullable = false, updatable = false)
-    private LocalDateTime createdAt;
-
-    @Column(name = "fechado_em")
+    @Column(name = "closed_at")
     private LocalDateTime closedAt;
 }

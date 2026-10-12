@@ -1,5 +1,6 @@
 package com.chownrani.finances.entities;
 
+import com.chownrani.finances.entities.abstracts.Card;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.PrimaryKeyJoinColumn;
@@ -16,9 +17,9 @@ import lombok.Setter;
 @NoArgsConstructor
 public class Credit extends Card {
 
-    @Column(name = "dia_fechamento", nullable = false)
+    @Column(name = "closing_day", nullable = false)
     private Integer closingDay;
 
-    @Column(name = "dia_vencimento", nullable = false)
+    @Column(name = "due_day", nullable = false)
     private Integer dueDay;
 }
