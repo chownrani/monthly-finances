@@ -45,7 +45,8 @@ Percentages are fractions of the month's income. Round to 2 decimals with
 
 ## Data model
 
-All entities extend `AbstractEntity` (`@MappedSuperclass`): `id`, `created_at`
+All entities extend `AbstractEntity` (`@MappedSuperclass`): `id` (UUID,
+`@GeneratedValue(strategy = GenerationType.UUID)`), `created_at`
 (`@CreatedDate`), `updated_at` (`@LastModifiedDate`) and soft delete via
 `@SoftDelete(columnName = "deleted_at", strategy = TIMESTAMP)`.
 
