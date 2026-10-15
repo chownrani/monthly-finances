@@ -2,6 +2,7 @@ package com.chownrani.finances.services;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 import org.springframework.stereotype.Service;
 
@@ -21,7 +22,7 @@ public class SubscriptionService {
         return repository.save(entity);
     }
 
-    public Optional<Subscription> findById(Long id) {
+    public Optional<Subscription> findById(UUID id) {
         return repository.findById(id);
     }
 
@@ -29,7 +30,7 @@ public class SubscriptionService {
         return repository.findAll();
     }
 
-    public Subscription update(Long id, Subscription entity) {
+    public Subscription update(UUID id, Subscription entity) {
         if (!repository.existsById(id)) {
             throw new EntityNotFoundException("Subscription not found: " + id);
         }
@@ -37,7 +38,7 @@ public class SubscriptionService {
         return repository.save(entity);
     }
 
-    public void delete(Long id) {
+    public void delete(UUID id) {
         if (!repository.existsById(id)) {
             throw new EntityNotFoundException("Subscription not found: " + id);
         }

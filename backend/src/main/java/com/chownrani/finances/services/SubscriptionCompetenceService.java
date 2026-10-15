@@ -2,6 +2,7 @@ package com.chownrani.finances.services;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 import org.springframework.stereotype.Service;
 
@@ -21,7 +22,7 @@ public class SubscriptionCompetenceService {
         return repository.save(entity);
     }
 
-    public Optional<SubscriptionCompetence> findById(Long id) {
+    public Optional<SubscriptionCompetence> findById(UUID id) {
         return repository.findById(id);
     }
 
@@ -29,7 +30,7 @@ public class SubscriptionCompetenceService {
         return repository.findAll();
     }
 
-    public SubscriptionCompetence update(Long id, SubscriptionCompetence entity) {
+    public SubscriptionCompetence update(UUID id, SubscriptionCompetence entity) {
         if (!repository.existsById(id)) {
             throw new EntityNotFoundException("SubscriptionCompetence not found: " + id);
         }
@@ -37,7 +38,7 @@ public class SubscriptionCompetenceService {
         return repository.save(entity);
     }
 
-    public void delete(Long id) {
+    public void delete(UUID id) {
         if (!repository.existsById(id)) {
             throw new EntityNotFoundException("SubscriptionCompetence not found: " + id);
         }

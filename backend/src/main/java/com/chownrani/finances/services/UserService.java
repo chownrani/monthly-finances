@@ -2,6 +2,7 @@ package com.chownrani.finances.services;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 import org.springframework.stereotype.Service;
 
@@ -21,7 +22,7 @@ public class UserService {
         return repository.save(entity);
     }
 
-    public Optional<User> findById(Long id) {
+    public Optional<User> findById(UUID id) {
         return repository.findById(id);
     }
 
@@ -29,7 +30,7 @@ public class UserService {
         return repository.findAll();
     }
 
-    public User update(Long id, User entity) {
+    public User update(UUID id, User entity) {
         if (!repository.existsById(id)) {
             throw new EntityNotFoundException("User not found: " + id);
         }
@@ -37,7 +38,7 @@ public class UserService {
         return repository.save(entity);
     }
 
-    public void delete(Long id) {
+    public void delete(UUID id) {
         if (!repository.existsById(id)) {
             throw new EntityNotFoundException("User not found: " + id);
         }

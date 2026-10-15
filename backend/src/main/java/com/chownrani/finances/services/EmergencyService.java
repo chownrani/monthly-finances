@@ -2,6 +2,7 @@ package com.chownrani.finances.services;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 import org.springframework.stereotype.Service;
 
@@ -21,7 +22,7 @@ public class EmergencyService {
         return repository.save(entity);
     }
 
-    public Optional<Emergency> findById(Long id) {
+    public Optional<Emergency> findById(UUID id) {
         return repository.findById(id);
     }
 
@@ -29,7 +30,7 @@ public class EmergencyService {
         return repository.findAll();
     }
 
-    public Emergency update(Long id, Emergency entity) {
+    public Emergency update(UUID id, Emergency entity) {
         if (!repository.existsById(id)) {
             throw new EntityNotFoundException("Emergency not found: " + id);
         }
@@ -37,7 +38,7 @@ public class EmergencyService {
         return repository.save(entity);
     }
 
-    public void delete(Long id) {
+    public void delete(UUID id) {
         if (!repository.existsById(id)) {
             throw new EntityNotFoundException("Emergency not found: " + id);
         }

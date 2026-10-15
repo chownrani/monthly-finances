@@ -2,6 +2,7 @@ package com.chownrani.finances.services;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 import org.springframework.stereotype.Service;
 
@@ -21,7 +22,7 @@ public class VariableExpenseCompetenceService {
         return repository.save(entity);
     }
 
-    public Optional<VariableExpenseCompetence> findById(Long id) {
+    public Optional<VariableExpenseCompetence> findById(UUID id) {
         return repository.findById(id);
     }
 
@@ -29,7 +30,7 @@ public class VariableExpenseCompetenceService {
         return repository.findAll();
     }
 
-    public VariableExpenseCompetence update(Long id, VariableExpenseCompetence entity) {
+    public VariableExpenseCompetence update(UUID id, VariableExpenseCompetence entity) {
         if (!repository.existsById(id)) {
             throw new EntityNotFoundException("VariableExpenseCompetence not found: " + id);
         }
@@ -37,7 +38,7 @@ public class VariableExpenseCompetenceService {
         return repository.save(entity);
     }
 
-    public void delete(Long id) {
+    public void delete(UUID id) {
         if (!repository.existsById(id)) {
             throw new EntityNotFoundException("VariableExpenseCompetence not found: " + id);
         }
