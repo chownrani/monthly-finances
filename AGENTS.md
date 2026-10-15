@@ -90,6 +90,28 @@ Full rules, data model and terminology: `.opencode/skills/finances-domain/SKILL.
 - Do not modify generated/build output, dependency directories or lockfiles by hand.
 - Never read, write or print secrets (credentials, tokens, `.env` files, keys).
 
+## Commit conventions
+
+Follow **Conventional Commits**: `<type>: <subject>` (subject imperative,
+concise, English). One logical change per commit. Optional scope:
+`<type>(scope): <subject>`.
+
+| Type      | Use for                                                        |
+| --------- | -------------------------------------------------------------- |
+| `feat`    | A new feature (MINOR in SemVer).                               |
+| `fix`     | A bug fix (PATCH in SemVer).                                   |
+| `docs`    | Documentation only (README, AGENTS.md, skills).                |
+| `test`    | Adding, changing or removing tests (no production code).       |
+| `build`   | Build files and dependencies (`pom.xml`, etc.).                |
+| `perf`    | A code change that improves performance.                       |
+| `style`   | Formatting only: whitespace, semicolons, lint (no behavior).   |
+| `refactor`| Code change that neither fixes a bug nor adds a feature.       |
+| `chore`   | Maintenance tasks, config/packages (e.g. `.gitignore`).        |
+| `ci`      | Continuous integration changes.                                |
+| `raw`     | Changes to config files, data, features, parameters.           |
+| `cleanup` | Removing commented/dead code to improve readability.           |
+| `remove`  | Deleting obsolete files, directories or functionality.         |
+
 ## Guardrails (enforced)
 
 Configured in `opencode.json` and `.opencode/plugin/guardrails.ts`.
@@ -119,3 +141,4 @@ starts. See `.opencode/skills/agent-waves/SKILL.md` for details.
 - [ ] No build, lint or type errors
 - [ ] No secrets, lockfiles or generated files touched by hand
 - [ ] Work committed in logical, task-sized commits (on a branch, not `main`)
+- [ ] Commit messages follow the semantic commit convention above
